@@ -11,8 +11,13 @@ export const getUser = (_id) => {
 };
 
 //to find the specific user according to the id
+//@filter should be passed as an object
 export const findUser = (filter) => {
   return UserSchema.findOne(filter);
+};
+//to delete the user based on _id
+export const deleteUser = (filter) => {
+  return UserSchema.findOneAndDelete(filter);
 };
 //to update the user
 export const updateUser = (_id, obj) => {

@@ -7,8 +7,24 @@ POST http://localhost:8000/api/v1/users
 Content-Type: application/json
 
 {
-    "firstName" : "dipak",
+    "firstName" : "dipika",
     "lastName":"paudellk",
     "email":"paudelsantosh508@gmail.com",
     "address":"3/25 cecil street"
+}
+###find the user
+POST http://localhost:8000/api/v1/users/find
+Content-Type: application/json
+
+{
+    "firstName":"anshu",
+    "email":"paudelsantosh508@gmail.com"
+}
+
+###delete the user
+DELETE http://localhost:8000/api/v1/users
+Content-Type: application/json
+
+{
+    "firstName":"anshu"
 }

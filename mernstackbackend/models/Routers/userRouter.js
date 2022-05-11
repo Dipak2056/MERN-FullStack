@@ -6,6 +6,7 @@ import {
   findUser,
   insertUser,
   updateUser,
+  deleteUser,
 } from "../models/User.Model.js";
 
 //here the real requests happens for the server side,
@@ -41,7 +42,23 @@ router.post("/", async (req, res) => {
     });
   }
 });
+//find user
+router.post("/find", async (req, res) => {
+  const user = await findUser(req.body);
+  user?._id
+    ? res.json({
+        staus: "success",
+        user,
+      })
+    : res.json({
+        staus: "error",
+        message: "could not find",
+      });
+});
 //delete user
-router.delete("/", async (req, res) => {});
+router.delete("/", async (req, res) => {
+  const user = await deleteUser(req.body);
+  res.send("user has been deleted successfully");
+});
 
 export default router;
