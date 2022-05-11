@@ -17,8 +17,8 @@ dbConnection();
 //for the page not found request, or for all request
 //for the request on the server we have created sepeate files and folders to manage the req and response for that
 //we have use the use method of express
-
-// app.use("", router);
+import userRouter from "./models/Routers/userRouter.js";
+app.use("/api/v1/users", userRouter);
 
 //if no calls are made
 app.get("*", (req, res) => {

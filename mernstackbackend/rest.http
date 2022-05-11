@@ -1,0 +1,14 @@
+###get user api
+GET http://localhost:8000/api/v1/users
+Content-Type: application/json
+
+###post user api
+POST http://localhost:8000/api/v1/users
+Content-Type: application/json
+
+{
+    "firstName" : "dipak",
+    "lastName":"paudellk",
+    "email":"paudelsantosh508@gmail.com",
+    "address":"3/25 cecil street"
+}
